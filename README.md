@@ -445,7 +445,8 @@ IoT status:
 
 WiFi  : CONNECTED
 Cloud : UPDATED
-# 🖥️ Example UART System Output
+### 🖥️ Example UART System Output
+```text
 ================================
        SMART AGRICULTURE
 ================================
@@ -459,6 +460,7 @@ WiFi       : CONNECTED
 Cloud      : UPDATED
 
 ================================
+```
 🌐 IoT and Cloud Monitoring
 
 The ESP8266 Wi-Fi module provides wireless communication between the LPC2129-based agricultural system and the cloud platform.
