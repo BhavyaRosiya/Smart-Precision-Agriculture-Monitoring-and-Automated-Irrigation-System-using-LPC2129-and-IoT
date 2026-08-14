@@ -1,0 +1,2 @@
+# Smart-Precision-Agriculture-Monitoring-and-Automated-Irrigation-System-using-LPC2129-and-IoT
+IoT-based smart farming system using LPC2129 ARM7 for real-time monitoring and automated irrigation. Monitors soil moisture, water level, temperature, humidity, rainfall, sunlight, fire and motion. Uses ESP8266, ThingSpeak, LCD, EEPROM, SD Card, RTC and CAN for cloud monitoring, data logging and farm safety.
