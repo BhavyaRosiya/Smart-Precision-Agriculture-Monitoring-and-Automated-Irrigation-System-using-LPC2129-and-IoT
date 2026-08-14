@@ -212,8 +212,8 @@ LPC2129
 
 Select LPC2129 as the target device.
 
-# 📁 3. Check Project Files
-
+### 📁 3. Check Project Files
+```text
 Make sure that all required source files and header files are added to the Keil project.
 
 The project structure is:
@@ -254,6 +254,7 @@ wifi.c	ESP8266 Wi-Fi communication
 can.c	CAN communication
 Block_diagram.jpeg	System block diagram
 Smart_Agriculture.uvprojx	Keil project file
+```
 # 🔨 4. Build the Project
 
 After opening the project, build the application in Keil µVision 5.
@@ -302,13 +303,14 @@ Example:
 
 Objects/
 └── Smart_Agriculture.hex
-# 🔌 6. Connect the LPC2129
+### 🔌 6. Connect the LPC2129
 
 Connect the LPC2129 development board to the computer using the supported programming interface.
 
 Connect the required sensors and peripherals according to the project's circuit diagram and configured GPIO/ADC pins.
 
 🔧 Main Hardware Connections
+```text
 Module	Interface
 Soil Moisture Sensor	ADC
 Water Level Sensor	ADC
@@ -325,6 +327,7 @@ SD Card	SPI
 MCP2551	CAN
 16×2 LCD	GPIO
 Relay + Water Pump	GPIO
+```
 # ⚡ 7. Flash the Program
 
 Open Flash Magic and configure the required programming settings.
