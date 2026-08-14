@@ -147,7 +147,7 @@ Sensor data and system status are displayed on a **16×2 LCD**, stored using **A
 
 The block diagram below illustrates the complete architecture of the **Smart Precision Agriculture Monitoring and Automated Irrigation System**, including sensors, LPC2129 ARM7 controller, irrigation control, IoT connectivity, data storage, RTC, and CAN communication.
 
-![Smart Precision Agriculture Monitoring and Automated Irrigation System Block Diagram](block-diagram.jpg)
+![Smart Precision Agriculture Monitoring and Automated Irrigation System Block Diagram](Block_diagram.jpeg)
 
 ---
 
