@@ -151,6 +151,51 @@ The block diagram below illustrates the complete architecture of the **Smart Pre
 
 ---
 
+## ⚙️ How to Run the Project
+
+### 🛠️ Software Requirements
+
+- **Keil µVision 5**
+- **ARM7 LPC2129 Device Support Package**
+- **Flash Magic** for programming the LPC2129
+- **Serial Terminal** such as Tera Term, PuTTY, or another UART terminal
+
+### 🔧 Hardware Requirements
+
+- LPC2129 ARM7 Development Board
+- ESP8266 Wi-Fi Module
+- Soil Moisture Sensor
+- Water Level Sensor
+- LM35 Temperature Sensor
+- DHT22 Temperature & Humidity Sensor
+- Rain Sensor
+- LDR Sensor
+- Flame Sensor
+- PIR Motion Sensor
+- Relay Module
+- Water Pump
+- 16×2 LCD
+- AT24C256 EEPROM
+- SD Card Module
+- DS1307 RTC
+- MCP2551 CAN Transceiver
+- Buzzer and LEDs
+
+### 📂 1. Clone the Repository
+
+Clone the project repository using:
+
+```bash
+git clone <your-github-repository-url>
+cd Smart-Precision-Agriculture
+
+### 🖥️ 2. Open the Keil Project
+
+Open **Keil µVision 5** and open the project file:
+
+```text
+Smart_Agriculture.uvprojx
+
 # 👨‍💻 Author
 
 **Bhavya Rosiya**
