@@ -181,20 +181,245 @@ The block diagram below illustrates the complete architecture of the **Smart Pre
 - MCP2551 CAN Transceiver
 - Buzzer and LEDs
 
-### 📂 1. Clone the Repository
+## 📂 1. Clone the Repository
 
 Clone the project repository using:
 
-```bash
+
 git clone <your-github-repository-url>
 cd Smart-Precision-Agriculture
 
-### 🖥️ 2. Open the Keil Project
+## 🖥️ 2. Open the Keil Project
 
 Open **Keil µVision 5** and open the project file:
 
-```text
-Smart_Agriculture.uvprojx
+Project → Options for Target → Device → NXP → LPC2129
+
+##📁 3. Project Files
+
+Make sure all required source and header files are added to the Keil project.
+
+##📂 Project Structure
+Smart-Precision-Agriculture/
+│
+├── main.c
+├── header.h
+├── uart.c
+├── adc.c
+├── lcd.c
+├── i2c.c
+├── eeprom.c
+├── rtc.c
+├── dht22.c
+├── soil_sensor.c
+├── water_sensor.c
+├── wifi.c
+├── can.c
+│
+├── Block_diagram.jpeg
+├── README.md
+└── Smart_Agriculture.uvprojx
+##🔨 4. Build the Project
+
+In Keil µVision 5, select:
+
+Project → Build Target
+
+or press:
+
+F7
+
+Make sure the project compiles successfully without any errors.
+
+##📦 5. Generate the HEX File
+
+Open:
+
+Project → Options for Target → Output
+
+Enable:
+
+☑ Create HEX File
+
+Then build the project again using:
+
+Project → Build Target
+
+The generated .hex file will normally be available inside the:
+
+Objects/
+
+folder.
+
+##🔌 6. Connect the LPC2129
+
+Connect the LPC2129 development board to the computer using the supported programming interface.
+
+Connect the required sensors and peripherals according to the project's circuit diagram and pin configuration.
+
+🔧 Main Connections
+Module	Interface
+Soil Moisture Sensor	ADC
+Water Level Sensor	ADC
+LM35	ADC
+LDR	ADC
+DHT22	GPIO
+Rain Sensor	GPIO
+Flame Sensor	GPIO
+PIR Sensor	GPIO
+ESP8266	UART
+DS1307 RTC	I²C
+AT24C256 EEPROM	I²C
+SD Card	SPI
+MCP2551	CAN
+LCD	GPIO
+Relay + Pump	GPIO
+##⚡ 7. Flash the Program
+
+Open Flash Magic and configure the required programming settings:
+
+COM Port
+Baud Rate
+LPC2129 Device
+Oscillator Frequency
+
+Select the generated .hex file from the Objects/ folder.
+
+Then start the programming process and wait until the flashing operation is completed successfully.
+
+##▶️ 8. Run the System
+
+After programming is complete:
+
+Reset the LPC2129 development board.
+Power ON the connected sensors and modules.
+The LPC2129 starts reading the sensor data.
+Sensor values and system status are displayed on the 16×2 LCD.
+The controller checks the soil moisture and water level.
+The water pump is automatically controlled according to the field conditions.
+ESP8266 communicates with the LPC2129 through UART.
+Sensor data can be transmitted to ThingSpeak Cloud.
+EEPROM and SD Card can be used for data logging.
+DS1307 RTC provides date and time information.
+LEDs and buzzer provide system alerts.
+##🌱 9. Automatic Irrigation Logic
+
+The irrigation system operates according to the following logic:
+
+              ┌─────────────────────┐
+              │  Read Soil Moisture  │
+              └──────────┬──────────┘
+                         │
+                         ▼
+                 ┌───────────────┐
+                 │  Is Soil Dry? │
+                 └───────┬───────┘
+                    YES  │  NO
+                         │
+              ┌──────────┘
+              │
+              │ NO
+              ▼
+        ┌──────────────┐
+        │   Pump OFF   │
+        └──────────────┘
+
+
+                    YES
+                     │
+                     ▼
+            ┌─────────────────┐
+            │ Check Water     │
+            │     Level       │
+            └────────┬────────┘
+                     │
+                     ▼
+             ┌─────────────────┐
+             │ Water Available?│
+             └───────┬─────────┘
+                 YES │  NO
+                     │
+                     │       ┌──────────────┐
+                     └──────►│   Pump OFF   │
+                             └──────────────┘
+
+
+                     YES
+                      │
+                      ▼
+              ┌──────────────┐
+              │ Check Rain   │
+              └──────┬───────┘
+                     │
+                     ▼
+                ┌───────────┐
+                │  No Rain? │
+                └─────┬─────┘
+                  YES │  NO
+                      │
+                      │       ┌──────────────┐
+                      └──────►│   Pump OFF   │
+                              └──────────────┘
+                      │
+                      ▼
+                ┌──────────────┐
+                │    Pump ON   │
+                └──────────────┘
+💧 Irrigation Conditions
+
+The water pump is turned ON when:
+
+Soil is Dry
+      +
+Water is Available
+      +
+No Rain Detected
+      ↓
+   Pump ON
+
+The water pump is turned OFF when:
+
+Soil is Wet
+      OR
+Water is Not Available
+      OR
+Rain is Detected
+      ↓
+   Pump OFF
+##📺 10. Expected Output
+
+The 16×2 LCD and UART terminal can display system information such as:
+
+SMART AGRICULTURE
+SYSTEM STARTED
+
+Example sensor and system status:
+
+Soil: DRY
+Water: AVAILABLE
+Pump: ON
+Rain: NO
+
+IoT status:
+
+WiFi: CONNECTED
+Cloud: UPDATED
+##🖥️ Example System Output
+================================
+      SMART AGRICULTURE
+================================
+
+
+Soil       : DRY
+Water      : AVAILABLE
+Pump       : ON
+Rain       : NO
+
+
+WiFi       : CONNECTED
+Cloud      : UPDATED
+================================
+
 
 # 👨‍💻 Author
 
