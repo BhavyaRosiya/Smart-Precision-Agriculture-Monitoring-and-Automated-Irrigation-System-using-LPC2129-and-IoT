@@ -345,8 +345,8 @@ Objects/Smart_Agriculture.hex
 
 Start the programming process and wait until Flash Magic reports that programming has completed successfully.
 
-# ▶️ 8. Run the System
-
+### ▶️ 8. Run the System
+```text
 After programming is completed:
 
 Reset the LPC2129 development board.
@@ -363,6 +363,7 @@ Sensor data can be transmitted to ThingSpeak.
 EEPROM and SD card can be used for data logging.
 DS1307 provides date and time information.
 LEDs and buzzer provide system alerts.
+```
 # 🌱 9. Automatic Irrigation Logic
 
 The automatic irrigation system uses soil moisture, water level, and rain detection to decide whether the water pump should operate.
