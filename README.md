@@ -181,7 +181,7 @@ The block diagram below illustrates the complete architecture of the **Smart Pre
 - MCP2551 CAN Transceiver
 - Buzzer and LEDs
 
-#📂 1. Clone the Repository
+# 📂 1. Clone the Repository
 
 Clone the project repository using Git:
 
@@ -190,7 +190,7 @@ cd Smart-Precision-Agriculture
 
 Replace <your-github-repository-url> with the actual GitHub repository URL.
 
-#🖥️ 2. Open the Keil Project
+# 🖥️ 2. Open the Keil Project
 
 Open Keil µVision 5 and open the project file:
 
@@ -212,7 +212,7 @@ LPC2129
 
 Select LPC2129 as the target device.
 
-#📁 3. Check Project Files
+# 📁 3. Check Project Files
 
 Make sure that all required source files and header files are added to the Keil project.
 
@@ -254,7 +254,7 @@ wifi.c	ESP8266 Wi-Fi communication
 can.c	CAN communication
 Block_diagram.jpeg	System block diagram
 Smart_Agriculture.uvprojx	Keil project file
-#🔨 4. Build the Project
+# 🔨 4. Build the Project
 
 After opening the project, build the application in Keil µVision 5.
 
@@ -274,7 +274,7 @@ The build should complete with:
 
 Warnings should also be reviewed and resolved wherever possible.
 
-#📦 5. Generate the HEX File
+# 📦 5. Generate the HEX File
 
 To generate the HEX file, open:
 
@@ -302,7 +302,7 @@ Example:
 
 Objects/
 └── Smart_Agriculture.hex
-#🔌 6. Connect the LPC2129
+# 🔌 6. Connect the LPC2129
 
 Connect the LPC2129 development board to the computer using the supported programming interface.
 
@@ -325,7 +325,7 @@ SD Card	SPI
 MCP2551	CAN
 16×2 LCD	GPIO
 Relay + Water Pump	GPIO
-#⚡ 7. Flash the Program
+# ⚡ 7. Flash the Program
 
 Open Flash Magic and configure the required programming settings.
 
@@ -342,7 +342,7 @@ Objects/Smart_Agriculture.hex
 
 Start the programming process and wait until Flash Magic reports that programming has completed successfully.
 
-#▶️ 8. Run the System
+# ▶️ 8. Run the System
 
 After programming is completed:
 
@@ -360,7 +360,7 @@ Sensor data can be transmitted to ThingSpeak.
 EEPROM and SD card can be used for data logging.
 DS1307 provides date and time information.
 LEDs and buzzer provide system alerts.
-#🌱 9. Automatic Irrigation Logic
+# 🌱 9. Automatic Irrigation Logic
 
 The automatic irrigation system uses soil moisture, water level, and rain detection to decide whether the water pump should operate.
 
@@ -421,7 +421,7 @@ Rain is DETECTED
 
 This prevents unnecessary irrigation and helps conserve water.
 
-#📺 10. Expected Output
+# 📺 10. Expected Output
 
 The 16×2 LCD and UART terminal can display the system status.
 
@@ -441,7 +441,7 @@ IoT status:
 
 WiFi  : CONNECTED
 Cloud : UPDATED
-#🖥️ Example UART System Output
+# 🖥️ Example UART System Output
 ================================
        SMART AGRICULTURE
 ================================
